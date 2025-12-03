@@ -107,9 +107,9 @@ class MPC(Node):
         #self.map_name = 'levine_centerline'
         #self.map_name = 'siccs_first_floor_1'
         
-        #self.map_name = 'MoscowRaceway'
+        self.map_name = 'MoscowRaceway'
         #self.map_name = 'Zandvoort'
-        self.map_name = 'Oschersleben'
+        #self.map_name = 'Oschersleben'
         
         self.enable_drive = True  # enable drive message publishing
 
@@ -161,7 +161,6 @@ class MPC(Node):
         
         #self.waypoints[:, 3] = yaw
         #self.waypoints[:, 2] = self.waypoints[:, 3]  # use the 4th column as yaw
-                
 
         #self.waypoints[:, 3] = 3.0 # use just for the centerline
         
@@ -184,6 +183,10 @@ class MPC(Node):
         # init state - avoid unknown variables for scan callback
         self.curr_pos = np.array([0.0, 0.0, 0.0])
         self.rot_mat = np.identity(3)
+
+
+        # storage data to analyze
+        #self.
 
 
     def pose_callback(self, pose_msg):
@@ -227,7 +230,7 @@ class MPC(Node):
             if self.enable_drive:
                 self.drive_pub.publish(self.drive_msg)
         
-        print("steering ={}, speed ={}".format(self.drive_msg.drive.steering_angle, self.drive_msg.drive.speed))
+        # print("steering ={}, speed ={}".format(self.drive_msg.drive.steering_angle, self.drive_msg.drive.speed))
 
         self.vis_waypoints_pub.publish(self.vis_waypoints_msg)
 
@@ -480,8 +483,8 @@ class MPC(Node):
         # )
         ref_traj[3, :] = cyaw[ind_list]
 
-        print("ref_yaw ={}, cur_yaw ={}".format(cyaw[ind], state.yaw))
-        print(" ")
+        # print("ref_yaw ={}, cur_yaw ={}".format(cyaw[ind], state.yaw))
+        # print(" ")
 
         return ref_traj
 

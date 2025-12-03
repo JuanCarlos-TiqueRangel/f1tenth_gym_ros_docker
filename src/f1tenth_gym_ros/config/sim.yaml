@@ -45,9 +45,9 @@ bridge:
     #map_path: '/sim_ws/src/f1tenth_gym_ros/maps/levine/levine'
     #map_path: '/sim_ws/src/f1tenth_gym_ros/maps/Zandvoort/Zandvoort_map'
     #map_path: '/sim_ws/src/f1tenth_gym_ros/maps/Oschersleben/Oschersleben_map'
-    #map_path: '/sim_ws/src/f1tenth_gym_ros/maps/MoscowRaceway/MoscowRaceway_map'
+    map_path: '/sim_ws/src/f1tenth_gym_ros/maps/MoscowRaceway/MoscowRaceway_map'
     #map_path: '/sim_ws/src/f1tenth_gym_ros/maps/Zandvoort/Zandvoort_map'
-    map_path: '/sim_ws/src/f1tenth_gym_ros/maps/Oschersleben/Oschersleben_map'
+    #map_path: '/sim_ws/src/f1tenth_gym_ros/maps/Oschersleben/Oschersleben_map'
 
     map_img_ext: '.png'
 
@@ -57,7 +57,8 @@ bridge:
     # ego starting pose on map
     sx: 0.0
     sy: 0.0
-    stheta: 2.5
+    stheta: 1.5
+    #stheta: 2.5
 
     # opp starting pose on map
     sx1: 2.0
